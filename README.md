@@ -1,6 +1,20 @@
-# CarND-Path-Planning-Project
-Self-Driving Car Engineer Nanodegree Program
+# Path Planning Project
+
+## Introduction
+
+This is the first project in the third term of the Self Driving Car Nanodegree course offered by Udacity. In this project, I implemented a Path Planner to maneuver a vehicle around a simulated track. 
    
+## Path Planner Implementation
+
+I use Sensor Fusion data for lane changes with following approach:
+* If there are no cars in front of Ego car, drive Ego at 49.5mph (maximum speed is 50mph)
+* If there is a car 30m ahead of Ego, slow down and prepare to change lanes
+* Before changing lanes make sure there are no cars 30m ahead of Ego and 10m behind Ego in the lane Ego will attempt to change
+* If Ego is in the middle lane it will first look to change lane to the left. If left lane is not possible, then it will move to teh right lane if available
+
+## Reflection
+
+
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
 
