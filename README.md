@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is the first project in the third term of the Self Driving Car Nanodegree course offered by Udacity. In this project, I implemented a Path Planner to maneuver a vehicle around a three-lane simulated track of 4.32 miles without colliding with other vehicles and keeping sudden acceleration and jerk to minimum so the ride is smooth and at the same time completing the entire course in little over 5 minutes with a maximum speed of 50mph. 
+This is the first project in the third term of the Self Driving Car Nanodegree course offered by Udacity. In this project, I implemented a Path Planner to navigate a vehicle (Ego) around a three-lane simulated track of 4.32 miles without colliding with other vehicles and keeping sudden acceleration and jerk to minimum so the ride is smooth and at the same time completing the entire course in little over 5 minutes with a maximum speed of 50mph. 
    
 ## Path Planner Implementation
 
