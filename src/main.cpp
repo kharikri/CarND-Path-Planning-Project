@@ -279,7 +279,7 @@ int main() {
 				// TODO: define a path made up of (x,y) points that the car will visit sequentially every .02 seconds
 				int path_size = previous_path_x.size();
 
-				int n_points = 50; //May want to change???
+				int n_points = 50;
 
 				if (path_size > 0)
 				{
