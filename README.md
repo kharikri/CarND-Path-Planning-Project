@@ -7,18 +7,17 @@ This is the first project in the third term of the Self Driving Car Nanodegree c
 ## Path Planner Implementation
 
 I use Sensor Fusion data for lane changes with the following approach:
-* If there are no cars in front of Ego car, drive Ego at 49.5mph (maximum speed is 50mph)
+* If there are no cars in front of Ego car (my car), drive Ego at 49.5mph (maximum speed is 50mph)
 * If there is a car at 30m ahead of Ego the following three things can happen:
    * If the car ahead goes at the maximum speed, Ego will maintain its speed and be in the same lane
-   * If the car ahead is slower than Ego than Ego will slow down and prepare to change lanes
-   * If the car ahead is much slower than Ego and comes dangerously close (less than 10m) than Ego will rapidly drop the speed to a complete stop. No attempt is made to change lanes
-* Before changing lanes make sure there are no cars 30m ahead of Ego and 10m behind Ego in the lane Ego will attempt to move
-* If Ego is in the middle lane it will first look to change lane to the left. If left lane is not possible, then it will move to the right lane if available
+   * If the car ahead is slower than Ego, Ego will slow down and prepare to change lanes. Before changing lanes make sure there are no cars 30m ahead of Ego and 10m behind Ego in the lane Ego will attempt to move. If Ego is in the middle lane it will first look to change lane to the left. If left lane is not possible, then it will move to the right lane if available
+   * If no lanes are available to change, Ego will match the speed of the car ahead with a clearance of 30m
+   * If the car ahead is much slower than Ego and comes dangerously close (less than 10m) to Ego, Ego will rapidly drop the speed to a complete stop with minimum jerk. No attempt is made to change lanes
 
 ## Reflection
 
 I implemented a simple planner which works for the scenario depicted in the simulator. However the planner can be improved further by looking at following considerations:
-* If Ego is in lane 0 and is lane 2 is open it makes sense to shift to lane 1 even if the allowance is tighter to ease into lane 2. Currently in my implementation Ego is stuck in lane 0 as lane 1 is busy
+* If Ego is in lane 0 and is lane 2 is open it makes sense to shift to lane 1 even if the clearance is tighter to ease into lane 2. Currently in my implementation Ego is stuck in lane 0 as lane 1 is busy
 * If Ego is in the middle lane in the current implementation it always takes the left lane (assuming it is available) even if the right lane might be more efficient in the longer term as the traffic is lighter much ahead of Ego
 
 ## Project Details
