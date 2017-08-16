@@ -14,7 +14,7 @@ I used Sensor Fusion data for lane changes with the following approach:
    * If no lanes are available to change, Ego will match the speed of the car ahead with a clearance of 30m
    * If the car ahead is much slower than Ego and comes dangerously close (less than 10m) to Ego, Ego will rapidly drop the speed to a complete stop with minimum jerk. No attempt is made to change lanes
 
-Here is the video of Ego making an entire lap (4.32 miles) without an incident.
+[Here](https://youtu.be/ydS2FFMabEM) is the video of Ego making an entire lap (4.32 miles) without an incident. [Here](https://youtu.be/sykf8N0AoP0) is another example where Ego is caught in heavy traffic resulting in several instances of hard stops.
 
 ## Reflection
 
