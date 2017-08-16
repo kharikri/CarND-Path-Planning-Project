@@ -2,18 +2,26 @@
 
 ## Introduction
 
-This is the first project in the third term of the Self Driving Car Nanodegree course offered by Udacity. In this project, I implemented a Path Planner to maneuver a vehicle around a simulated track. 
+This is the first project in the third term of the Self Driving Car Nanodegree course offered by Udacity. In this project, I implemented a Path Planner to maneuver a vehicle around a three-lane simulated track of 4.32 miles without colliding with other vehicles and keeping sudden acceleration and jerk to minimum so the ride is smooth and at the same time completing the entire course in little over 5 minutes with a maximum speed of 50mph. 
    
 ## Path Planner Implementation
 
-I use Sensor Fusion data for lane changes with following approach:
+I use Sensor Fusion data for lane changes with the following approach:
 * If there are no cars in front of Ego car, drive Ego at 49.5mph (maximum speed is 50mph)
-* If there is a car 30m ahead of Ego, slow down and prepare to change lanes
-* Before changing lanes make sure there are no cars 30m ahead of Ego and 10m behind Ego in the lane Ego will attempt to change
-* If Ego is in the middle lane it will first look to change lane to the left. If left lane is not possible, then it will move to teh right lane if available
+* If there is a car at 30m ahead of Ego the following three things can happen:
+   * If the car ahead goes at the maximum speed, Ego will maintain its speed and be in the same lane
+   * If the car ahead is slower than Ego than Ego will slow down and prepare to change lanes
+   * If the car ahead is much slower than Ego and comes dangerously close (less than 10m) than Ego will rapidly drop the speed to a complete stop. No attempt is made to change lanes
+* Before changing lanes make sure there are no cars 30m ahead of Ego and 10m behind Ego in the lane Ego will attempt to move
+* If Ego is in the middle lane it will first look to change lane to the left. If left lane is not possible, then it will move to the right lane if available
 
 ## Reflection
 
+I implemented a simple planner which works for the scenario depicted in the simulator. However the planner can be improved further by looking at following considerations:
+* If Ego is in lane 0 and is lane 2 is open it makes sense to shift to lane 1 even if the allowance is tighter to ease into lane 2. Currently in my implementation Ego is stuck in lane 0 as lane 1 is busy
+* If Ego is in the middle lane in the current implementation it always takes the left lane (assuming it is available) even if the right lane might be more efficient in the longer term as the traffic is lighter much ahead of Ego
+
+## Project Details
 
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
