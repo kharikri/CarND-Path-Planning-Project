@@ -22,8 +22,7 @@ I implemented a simple planner which works for the scenario depicted in the simu
 * If Ego is in lane 0 and lane 2 is open, it makes sense to shift to lane 1 even if the clearance is tighter and ease into lane 2. Currently in my implementation Ego is stuck in lane 0 as lane 1 is busy
 * If Ego is in the middle lane, in the current implementation it always takes the left lane (assuming it is available) even if the right lane might be more efficient in the longer term due to lighter traffic
 
-## Project Details
-
+## Project Details (provided by Udacity)
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
 
