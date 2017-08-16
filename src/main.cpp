@@ -160,11 +160,6 @@ vector<double> getXY(double s, double d, vector<double> maps_s, vector<double> m
 
 }
 
-double getD(int lane_id)
-{
-	return (lane_id)*4+2;
-}
-
 int getLaneId(int d)
 {
 	if (d >= 8 && d <= 12) 
